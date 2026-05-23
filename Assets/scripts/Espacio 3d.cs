@@ -13,21 +13,10 @@ public class Espacio3d : MonoBehaviour
 
    
     public float speedRotationSol= 20f;
-    public float speedRotationTierra= 20f;
-    public float speedRotationLuna= 50f;
-
-   
-
-    // Start is called before the first frame update
-    void Start()
-    {
+    public float speedRotationTierra= 50f;
+    public float speedRotationLuna= 15f;
 
 
-
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
 
@@ -42,6 +31,12 @@ public class Espacio3d : MonoBehaviour
                                                                         
         LunaTransform.RotateAround(TierraTransform.position, Vector3.up,speedRotationLuna *  Time.deltaTime );
 
-       
+        Debug.DrawRay(SolTransform.position, SolTransform.right * 3, Color.yellow);
+        Debug.DrawRay(TierraTransform.position, TierraTransform.right * 2, Color.blue);
+        Debug.DrawRay(LunaTransform.position, LunaTransform.right * 2, Color.white);
+
+
+
+
     }
 }
